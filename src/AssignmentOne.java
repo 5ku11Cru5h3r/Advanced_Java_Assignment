@@ -192,13 +192,14 @@ public class AssignmentOne {
         try (Scanner sc = new Scanner(System.in)) {
             while (true) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+                System.out.println("== Assignment One Menu ==");
                 System.out.println("Enter your choice...(1-10)");
                 System.out.println("Ctrl+C or invalid choice to exit");
                 int choice = sc.nextInt();
                 sc.nextLine();
                 switch (choice) {
                     case 0 -> HelloWorld();
-                    // XXX: CASE_1 => Needs clarity - Calculator approach
+                    //REVIEW: CASE_1 => Needs clarity - Calculator approach
                     case 1 -> add_two_numbers(sc);
                     case 2 -> prop_of_circle(sc);
                     case 3 -> simple_interest(sc);

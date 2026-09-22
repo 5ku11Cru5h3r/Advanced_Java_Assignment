@@ -1,6 +1,36 @@
 import java.util.Scanner;
 
 public class AssignmentOne {
+    public static void student_pass() {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("== Program to CHECK WHETHER THE STUDENT PASSED OR NOT ==");
+            System.out.println("Enter Marks:");
+            int first = sc.nextInt();
+            if (first >= 40) {
+                System.out.println("== PASSED ==");
+            } else
+                System.out.println("== NOT PASSED ==");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
+        }
+    }
+
+    public static void voting_elligibilty() {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("== Program to CHECK AGE ELLIGIBILITY ==");
+            System.out.println("Enter AGE:");
+            int first = sc.nextInt();
+            if (first > 17) {
+                System.out.println("== AGE ELLIGIBLE ==");
+            } else
+                System.out.println("== AGE NOT ELLIGIBLE ==");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
+        }
+    }
+
     public static void largest_of_two() {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.println("== Program to CHECK WHICH NUMBER IS GREATER ==");

@@ -14,7 +14,6 @@ public class AssignmentOne {
             } else
                 System.out.println("== NOT PASSED ==");
         } catch (Exception e) {
-            // FIXME: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -30,7 +29,6 @@ public class AssignmentOne {
             } else
                 System.out.println("== AGE NOT ELLIGIBLE ==");
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -51,7 +49,6 @@ public class AssignmentOne {
             } else
                 System.out.println("== FIRST IS EQUAL TO SECOND ==");
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -69,7 +66,6 @@ public class AssignmentOne {
             } else
                 System.out.println("== NEGATIVE ==");
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -88,7 +84,6 @@ public class AssignmentOne {
             }
 
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -114,7 +109,6 @@ public class AssignmentOne {
             System.out.println("Average :");
             System.out.println(average);
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -130,7 +124,6 @@ public class AssignmentOne {
             System.out.println("Temperature in Farenheit :");
             System.out.println(Farenheit);
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -151,7 +144,6 @@ public class AssignmentOne {
             System.out.println("Total accumulated Premium:");
             System.out.println(p + (p * r * t));
         } catch (Exception e) {
-            // XXX: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
 
@@ -170,7 +162,6 @@ public class AssignmentOne {
             System.out.printf("%.2f\n", circumference);
             // System.out.println(circumference);
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -188,7 +179,6 @@ public class AssignmentOne {
             System.out.println("{a * b}:" + (a * b));
             System.out.println("{a / b}:" + (a / b));
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Exception occured" + e.getMessage());
         }
     }
@@ -208,7 +198,7 @@ public class AssignmentOne {
                 sc.nextLine();
                 switch (choice) {
                     case 0 -> HelloWorld();
-                    // CASE 1: Needs clarity - Calculator approach
+                    // XXX: CASE_1 => Needs clarity - Calculator approach
                     case 1 -> add_two_numbers(sc);
                     case 2 -> prop_of_circle(sc);
                     case 3 -> simple_interest(sc);
@@ -224,7 +214,6 @@ public class AssignmentOne {
                 sc.nextLine();
             }
         } catch (AssertionError e) {
-            // TODO Auto-generated catch block
             // e.printStackTrace();
             System.out.println("Invalid choice... Exiting");
         }

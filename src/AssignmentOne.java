@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+// ASSIGNMENT DONE
 public class AssignmentOne {
     public static void student_pass() {
         try (Scanner sc = new Scanner(System.in)) {

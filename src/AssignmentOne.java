@@ -1,8 +1,81 @@
 import java.util.Scanner;
 
 public class AssignmentOne {
+    public static void largest_of_two() {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("== Program to CHECK WHICH NUMBER IS GREATER ==");
+            System.out.println("Enter A NUMBER:");
+            int first = sc.nextInt();
+            System.out.println("Enter ANOTHER NUMBER:");
+            int second = sc.nextInt();
+            if (first > second) {
+                System.out.println("== FIRST IS GREATER ==");
+            } else if (first < second) {
+                System.out.println("== SECOND IS GREATER ==");
+            } else
+                System.out.println("== FIRST IS EQUAL TO SECOND ==");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
+        }
+    }
+
+    public static void pos_neg() {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("== Program to CHECK POSITIVE, NEGATIVE OR ZERO ==");
+            System.out.println("Enter A NUMBER:");
+            int first = sc.nextInt();
+            if (first > 0) {
+                System.out.println("== POSITIVE ==");
+            } else if (first == 0) {
+                System.out.println("== ZERO ==");
+            } else
+                System.out.println("== NEGATIVE ==");
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
+        }
+    }
+
+    public static void even_odd() {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("== Program to CHECK EVEN OR ODD ==");
+            System.out.println("Enter A NUMBER:");
+            int first = sc.nextInt();
+            if (first % 2 == 0) {
+                System.out.println("EVEN");
+            } else {
+                System.out.println("ODD");
+
+            }
+
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
+        }
+    }
+
     public static void total_and_average() {
-        
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("== Program to calculate average ==");
+            System.out.println("Enter Marks in first subject :");
+            double first = sc.nextDouble();
+            System.out.println("Enter Marks in second subject :");
+            double second = sc.nextDouble();
+            System.out.println("Enter Marks in third subject :");
+            double third = sc.nextDouble();
+            double total = first + second + third;
+            double average = total / 3;
+
+            // double t = sc.nextDouble();
+            System.out.println("Total :");
+            System.out.println(total);
+            System.out.println("Average :");
+            System.out.println(average);
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
+        }
     }
 
     public static void temp_conversion() {
@@ -10,10 +83,13 @@ public class AssignmentOne {
             System.out.println("Enter Temperature in Celsius :");
             double Celsius = sc.nextDouble();
             double Farenheit = 32 + (Celsius * 1.8);
-            
+
             // double t = sc.nextDouble();
             System.out.println("Temperature in Farenheit :");
             System.out.println(Farenheit);
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
         }
     }
 
@@ -24,6 +100,9 @@ public class AssignmentOne {
             r /= 100;
             double t = sc.nextDouble();
             System.out.println(p + (p * r * t));
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
         }
 
     }
@@ -39,6 +118,9 @@ public class AssignmentOne {
             System.out.println("Circumference ==>");
             System.out.printf("%.2f\n", circumference);
             // System.out.println(circumference);
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
         }
     }
 
@@ -49,6 +131,9 @@ public class AssignmentOne {
             System.out.println("Enter b:");
             double b = sc.nextDouble();
             System.out.println("Result: \n {a+b}:" + (a + b));
+        } catch (Exception e) {
+            // TODO: handle exception
+            System.out.println("Exception occured" + e.getMessage());
         }
     }
 

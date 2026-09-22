@@ -173,14 +173,14 @@ public class AssignmentOne {
     }
 
     public static void main(String[] args) throws Exception {
-        while (true) {
-
-            try (Scanner sc = new Scanner(System.in)) {
+        try (Scanner sc = new Scanner(System.in)) {
+            while (true) {
                 int choice = sc.nextInt();
                 switch (choice) {
                     case 0 -> HelloWorld();
-                    case 1 -> // TBC
+                    case 1 -> { // TBC
                         add_two_numbers();
+                    }
                     case 2 -> prop_of_circle();
                     case 3 -> simple_interest();
                     case 4 -> temp_conversion();
@@ -192,12 +192,11 @@ public class AssignmentOne {
                     case 10 -> student_pass();
                     default -> throw new AssertionError();
                 }
-            } catch (AssertionError e) {
-                // TODO Auto-generated catch block
-                // e.printStackTrace();
-                System.out.println("Invalid choice... Exiting");
-                return;
             }
+        } catch (AssertionError e) {
+            // TODO Auto-generated catch block
+            // e.printStackTrace();
+            System.out.println("Invalid choice... Exiting");
         }
         // prop_of_circle();
     }

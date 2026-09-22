@@ -1,9 +1,29 @@
 import java.util.Scanner;
 
-public class App {
+public class AssignmentOne {
+    public static void total_and_average() {
+        
+    }
+
+    public static void temp_conversion() {
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Enter Temperature in Celsius :");
+            double Celsius = sc.nextDouble();
+            double Farenheit = 32 + (Celsius * 1.8);
+            
+            // double t = sc.nextDouble();
+            System.out.println("Temperature in Farenheit :");
+            System.out.println(Farenheit);
+        }
+    }
+
     public static void simple_interest() {
         try (Scanner sc = new Scanner(System.in)) {
-            
+            double p = sc.nextDouble();
+            double r = sc.nextDouble();
+            r /= 100;
+            double t = sc.nextDouble();
+            System.out.println(p + (p * r * t));
         }
 
     }

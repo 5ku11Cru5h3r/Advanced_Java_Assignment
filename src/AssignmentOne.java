@@ -173,7 +173,29 @@ public class AssignmentOne {
     }
 
     public static void main(String[] args) throws Exception {
-        // add_two_numbers();
-        prop_of_circle();
+        try (Scanner sc = new Scanner(System.in)) {
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 0 -> HelloWorld();
+                case 1 -> // TBC
+                    add_two_numbers();
+                case 2 -> prop_of_circle();
+                case 3 -> simple_interest();
+                case 4 -> temp_conversion();
+                case 5 -> total_and_average();
+                case 6 -> even_odd();
+                case 7 -> pos_neg();
+                case 8 -> largest_of_two();
+                case 9 -> voting_elligibilty();
+                case 10 -> student_pass();
+                default -> throw new AssertionError();
+            }
+        } catch (AssertionError e) {
+            // TODO Auto-generated catch block
+            // e.printStackTrace();
+            System.out.println("Invalid choice... Exiting");
+            return ;
+        }
+        // prop_of_circle();
     }
 }

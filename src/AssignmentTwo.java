@@ -1,7 +1,8 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AssignmentTwo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException, IOException {
         try (Scanner sc = new Scanner(System.in)) {
             while (true) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
@@ -20,10 +21,33 @@ public class AssignmentTwo {
                     case 4 -> largest_of_two(sc);
                     case 5 -> voting_elligibilty(sc);
                     case 6 -> salary_calculation(sc);
-                    case 7 -> pos_neg(sc);
-                    case 8 -> largest_of_two(sc);
-                    case 9 -> voting_elligibilty(sc);
-                    case 10 -> student_pass(sc);
+                    case 7 -> temprature_conversion(sc);
+                    case 8 -> simple_calculator(sc);
+                    case 9 -> {
+                        System.out.print("Enter passenger name: ");
+                        String name = sc.nextLine();
+
+                        System.out.print("Enter passenger age: ");
+                        int age = sc.nextInt();
+                        sc.nextLine();
+                        System.out.println("Passenger Name: " + name);
+                        System.out.println("Age: " + age);
+                        int fare = (int) bus_ticket(age);
+                        System.out.println("Ticket Fare: " + fare);
+                    }
+                    case 10 -> {
+                        System.out.print("Enter mobile number: ");
+                        long mobileNumber = sc.nextLong();
+
+                        System.out.print("Enter data usage in GB: ");
+                        double dataUsedGB = sc.nextDouble();
+
+                        double charge = calculateCharge(dataUsedGB);
+
+                        System.out.println("Mobile Number: " + mobileNumber);
+                        System.out.println("Data Usage: " + dataUsedGB + " GB");
+                        System.out.println("Final Charge: " + charge);
+                    }
                     default -> throw new AssertionError();
                 }
                 sc.nextLine();
@@ -34,9 +58,89 @@ public class AssignmentTwo {
         }
     }
 
+    private static double calculateCharge(double dataUsedGB) {
+        // TODO Auto-generated method stub
+        if (dataUsedGB <= 1) {
+            return 50;
+        } else if (dataUsedGB <= 5) {
+            return 100;
+        } else if (dataUsedGB <= 10) {
+            return 200;
+        } else {
+            return 350;
+        }
+    }
+
+    private static Object bus_ticket(int age) {
+        // TODO Auto-generated method stub
+        if (age < 5) {
+            return 0;
+        } else if (age <= 12) {
+            return 20;
+        } else if (age <= 59) {
+            return 40;
+        } else {
+            return 25;
+        }
+    }
+
+    private static Object simple_calculator(Scanner sc) {
+        // TODO Auto-generated method stub
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();
+        sc.nextLine();
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();
+        sc.nextLine();
+        System.out.print("Enter operator (+, -, *, /, %): ");
+        char operator = sc.next().charAt(0);
+        if (operator == '+') {
+            return num1 + num2;
+        } else if (operator == '-') {
+            return num1 - num2;
+        } else if (operator == '*') {
+            return num1 * num2;
+        } else if (operator == '/') {
+            if (num2 == 0) {
+                System.out.println("Division by zero is not allowed.");
+                return 0;
+            }
+            return num1 / num2;
+        } else if (operator == '%') {
+            if (num2 == 0) {
+                System.out.println("Modulo by zero is not allowed.");
+                return 0;
+            }
+            return num1 % num2;
+        } else {
+            System.out.println("Invalid operator.");
+            return 0;
+        }
+        // throw new UnsupportedOperationException("Unimplemented method
+        // 'simple_calculator'");
+    }
+
+    private static Object temprature_conversion(Scanner sc) {
+        // TODO Auto-generated method stub
+        System.out.print("Enter temperature in Celsius: ");
+        double celsius = sc.nextDouble();
+        sc.nextLine();
+        return (celsius * 9.0 / 5.0) + 32;
+    }
+
     private static Object salary_calculation(Scanner sc) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'salary_calculation'");
+        System.out.print("Enter basic salary: ");
+        double basicSalary = sc.nextDouble();
+        sc.nextLine();
+        double hra;
+        if (basicSalary >= 50000) {
+            hra = basicSalary * 0.20;
+        } else {
+            hra = basicSalary * 0.10;
+        }
+
+        return basicSalary + hra;
     }
 
     private static Object voting_elligibilty(Scanner sc) {
@@ -59,7 +163,7 @@ public class AssignmentTwo {
         }
     }
 
-    private static int largest_of_two(Scanner sc) throws Exception {
+    private static int largest_of_two(Scanner sc){
         // TODO Auto-generated method stub
         try {
             System.out.println("== Program to CHECK WHICH NUMBER IS GREATER ==");

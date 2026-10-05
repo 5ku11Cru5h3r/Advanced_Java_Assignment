@@ -163,7 +163,7 @@ public class AssignmentTwo {
         }
     }
 
-    private static int largest_of_two(Scanner sc){
+    private static int largest_of_two(Scanner sc) {
         // TODO Auto-generated method stub
         try {
             System.out.println("== Program to CHECK WHICH NUMBER IS GREATER ==");

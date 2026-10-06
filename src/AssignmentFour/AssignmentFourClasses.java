@@ -14,16 +14,17 @@ public class AssignmentFourClasses {
     public class Employee {
         Employee() {
             emp_ID_global++;
+            this.emp_id = emp_ID_global;
         }
 
-        int emp_id;
-        String emp_name = null;
-        double salary = 0;
-        double hra = 0;
-        double da = 0;
+        private int emp_id;
+        private String emp_name = null;
+        private double salary = 0;
+        private double hra = 0;
+        private double da = 0;
 
         public void read(String nm, double salary, double hra, double da) {
-            this.emp_id = emp_ID_global;
+
             this.emp_name = nm;
             this.salary = salary;
             this.hra = hra;
@@ -49,19 +50,20 @@ public class AssignmentFourClasses {
     /**
      * BankAccount Class
      */
-    private static int account_no_global = 1_000_000_000;
+    private int account_no_global = 1_000_000_000;
 
     public class BankAccount {
         BankAccount() {
             account_no_global++;
+            this.account_no = account_no_global;
         }
 
-        long account_no;
-        String customer_name = null;
-        long balance = 0;
+        private long account_no;
+        private String customer_name = null;
+        private long balance = 0;
 
         public void read(String customer_name) {
-            this.account_no = account_no_global;
+
             this.customer_name = customer_name;
             this.balance = 0;
         }
@@ -91,15 +93,15 @@ public class AssignmentFourClasses {
     public class Product {
         Product() {
             product_id_global++;
+            this.product_id = product_id_global;
         }
 
-        long product_id;
-        String product_name;
-        double product_price;
-        int quantity;
+        private long product_id;
+        private String product_name;
+        private double product_price;
+        private int quantity;
 
         public void read(String productName, double product_price, int quantity) {
-            this.product_id = product_id_global;
             this.product_name = productName;
             this.product_price = product_price;
             this.quantity = quantity;
@@ -125,9 +127,9 @@ public class AssignmentFourClasses {
     private static int consumer_number_global = 100;
 
     public class ElectricityBill {
-        int consumer_number;
-        String consumerName;
-        int quantity;
+        private int consumer_number;
+        private String consumerName;
+        private int quantity;
 
         ElectricityBill(String consumerName, int quantity) {
             consumer_number_global++;
@@ -161,10 +163,10 @@ public class AssignmentFourClasses {
      * MovieTicket
      */
     public class MovieTicket {
-        String customer_name;
-        String movie_name;
-        int number_of_tickets;
-        float ticket_price;
+        private String customer_name;
+        private String movie_name;
+        private int number_of_tickets;
+        private float ticket_price;
 
         MovieTicket(String customer_name, String movie_name, int number_of_tickets, float ticket_price) {
             this.customer_name = customer_name;

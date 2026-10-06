@@ -45,7 +45,7 @@ public class AssignmentFourClasses {
     }
 
     /**
-     * BankAccount
+     * BankAccount Class
      */
     private static int account_no_global = 1_000_000_000;
 
@@ -58,11 +58,49 @@ public class AssignmentFourClasses {
         String customer_name = null;
         long balance = 0;
 
-        public void read(String customer_name, long balance) {
+        public void read(String customer_name) {
             this.account_no = account_no_global;
             this.customer_name = customer_name;
-            this.balance = balance;
+            this.balance = 0;
         }
+
+        public void deposit(double cash) {
+            this.balance += cash;
+        }
+
+        public void withdraw(double cash) {
+            this.balance += cash;
+        }
+
+        public void display() {
+            System.out.println("Account Number: " + this.account_no);
+            System.out.println("Name: " + this.customer_name);
+            System.out.println("Balance: " + this.balance);
+        }
+    }
+
+    /**
+     * Product
+     */
+    long product_id_global;
+    public class Product {
+        Product() {
+            product_id_global++;
+        }
+        long product_id;
+        String product_name;
+        double product_price;
+        int quantity;
+        public void read(String productName, double product_price ,int quantity) {
+            this.product_id = product_id_global;
+            this.product_name = productName;
+            this.product_price = product_price;
+            this.quantity = quantity;
+        }
+        public void calculateBill() {
+            System.out.println((double) this.product_price * this.quantity);
+        }
+
         public void display() {
             System.out.println("Account Number: " + this.account_no);
             System.out.println("Name: " + this.customer_name);

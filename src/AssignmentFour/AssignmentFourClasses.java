@@ -36,11 +36,13 @@ public class AssignmentFourClasses {
         }
 
         public void display() {
+            System.out.println("-".repeat(60));
             System.out.println("Employee ID: " + this.emp_id);
             System.out.println("Employee Name: " + this.emp_name);
             System.out.println("Employee Salary: " + this.salary);
             System.out.println("Employee HRA: " + this.hra);
             System.out.println("Employee DA: " + this.da);
+            System.out.println("-".repeat(60));
         }
     }
 
@@ -73,9 +75,11 @@ public class AssignmentFourClasses {
         }
 
         public void display() {
+            System.out.println("-".repeat(60));
             System.out.println("Account Number: " + this.account_no);
             System.out.println("Name: " + this.customer_name);
             System.out.println("Balance: " + this.balance);
+            System.out.println("-".repeat(60));
         }
     }
 
@@ -106,10 +110,12 @@ public class AssignmentFourClasses {
         }
 
         public void display() {
+            System.out.println("-".repeat(60));
             System.out.println("Product ID: " + this.product_id);
             System.out.println("Name: " + this.product_name);
             System.out.println("Price: " + this.product_price);
             System.out.println("Quantity: " + this.quantity);
+            System.out.println("-".repeat(60));
         }
     }
 
@@ -143,9 +149,11 @@ public class AssignmentFourClasses {
         }
 
         public void display() {
+            System.out.println("-".repeat(60));
             System.out.println("Consumer ID : " + this.consumer_number);
             System.out.println("Name: " + this.consumerName);
             System.out.println("Quantity: " + this.quantity);
+            System.out.println("-".repeat(60));
         }
     }
 
@@ -171,10 +179,12 @@ public class AssignmentFourClasses {
         }
 
         public void display() {
+            System.out.println("-".repeat(60));
             System.out.println("Customer Name :" + this.customer_name);
             System.out.println("Price of a ticket :" + this.ticket_price);
             System.out.println("Number of Tickets" + this.number_of_tickets);
             System.out.println("Movie Name :" + this.movie_name);
+            System.out.println("-".repeat(60));
         }
     }
 }

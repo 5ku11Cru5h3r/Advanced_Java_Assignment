@@ -59,7 +59,6 @@ public class AssignmentTwo {
     }
 
     private static double calculateCharge(double dataUsedGB) {
-        // TODO Auto-generated method stub
         if (dataUsedGB <= 1) {
             return 50;
         } else if (dataUsedGB <= 5) {
@@ -72,7 +71,6 @@ public class AssignmentTwo {
     }
 
     private static Object bus_ticket(int age) {
-        // TODO Auto-generated method stub
         if (age < 5) {
             return 0;
         } else if (age <= 12) {
@@ -85,7 +83,6 @@ public class AssignmentTwo {
     }
 
     private static Object simple_calculator(Scanner sc) {
-        // TODO Auto-generated method stub
         System.out.print("Enter first number: ");
         double num1 = sc.nextDouble();
         sc.nextLine();
@@ -121,7 +118,6 @@ public class AssignmentTwo {
     }
 
     private static Object temprature_conversion(Scanner sc) {
-        // TODO Auto-generated method stub
         System.out.print("Enter temperature in Celsius: ");
         double celsius = sc.nextDouble();
         sc.nextLine();
@@ -129,7 +125,6 @@ public class AssignmentTwo {
     }
 
     private static Object salary_calculation(Scanner sc) {
-        // TODO Auto-generated method stub
         System.out.print("Enter basic salary: ");
         double basicSalary = sc.nextDouble();
         sc.nextLine();
@@ -144,7 +139,6 @@ public class AssignmentTwo {
     }
 
     private static Object voting_elligibilty(Scanner sc) {
-        // TODO Auto-generated method stub
         try {
             System.out.println("== Program to CHECK AGE ELLIGIBILITY ==");
             System.out.println("Enter AGE:");
@@ -164,7 +158,6 @@ public class AssignmentTwo {
     }
 
     private static int largest_of_two(Scanner sc) {
-        // TODO Auto-generated method stub
         try {
             System.out.println("== Program to CHECK WHICH NUMBER IS GREATER ==");
             System.out.println("Enter A NUMBER:");
@@ -184,7 +177,6 @@ public class AssignmentTwo {
                 return 0;
             }
         } catch (Exception e) {
-            // TODO: handle exception
             return -1;
         }
 

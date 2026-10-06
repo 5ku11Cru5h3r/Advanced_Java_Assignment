@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class AssignmentThree {
@@ -55,12 +54,10 @@ public class AssignmentThree {
     }
 
     private static Object largest_of_two(String[] args) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'largest_of_two'");
     }
 
     private static void pos_neg(Scanner sc) {
-        // TODO Auto-generated method stub
         System.out.println("=== Postive and Negative ===");
         // System.out.println("Enter size of the array :");
         System.out.println("Enter size of the array :");

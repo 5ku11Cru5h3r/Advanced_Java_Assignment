@@ -20,6 +20,7 @@ public class AssignmentThree {
             sum += i;
         }
         System.out.println("Sum : " + sum + "\t Average : " + (sum / size));
+        System.out.println("<Enter> to continue....");
         sc.nextLine();
     }
 
@@ -28,7 +29,7 @@ public class AssignmentThree {
             while (true) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                 System.out.println("== Assignment Three Menu ==");
-                System.out.println("Enter your choice...(1-10)");
+                System.out.println("Enter your choice...(1-8)");
                 System.out.println("Ctrl+C or invalid choice to exit");
                 int choice = sc.nextInt();
                 sc.nextLine();
@@ -81,15 +82,18 @@ public class AssignmentThree {
         System.out.println("Postive elements:");
         for (int i = 0; i < k.length; i++) {
             if (k[i] == 1)
-                System.out.print(v[i]);
+                System.out.print(v[i]+" ");
         }
+        System.out.println();
         System.out.println("Negative elements:");
         for (int i = 0; i < k.length; i++) {
             if (k[i] == -1)
-                System.out.print(v[i]);
+                System.out.print(v[i]+" ");
         }
+        System.out.println();
         System.out.println("Zero elements : " + count);
-
+        System.out.println("<Enter> to continue....");
+        sc.nextLine();
         // throw new UnsupportedOperationException("Unimplemented method 'pos_neg'");
     }
 
@@ -106,15 +110,17 @@ public class AssignmentThree {
         }
         // HashMap<Integer,Integer> h = new HashMap<>();
         for (int i = 0; i < v.length; i++) {
-            for (int j = i; j >= 0; j--) {
+            for (int j = i-1; j >= 0; j--) {
                 if ((v[i] ^ v[j]) == 0) {
                     System.out.println("Found duplicate\t:\t" + v[i]);
+                    System.out.println("<Enter> to continue....");
                     sc.nextLine();
                     return;
                 }
             }
         }
-        System.out.println("NO Found duplicate");
+        System.out.println("!! NO duplicate FOUND!!");
+        System.out.println("<Enter> to continue....");
         sc.nextLine();
         // throw new UnsupportedOperationException("Unimplemented method
         // 'find_duplicate'");
@@ -136,7 +142,8 @@ public class AssignmentThree {
         for (int i = size - 1; i >= 0; i--) {
             System.out.print(v[i] + " ");
         }
-        System.out.println();
+        System.out.println(); // Necessary
+        System.out.println("<Enter> to continue....");
         sc.nextLine();
         // throw new UnsupportedOperationException("Unimplemented method
         // 'reverse_array'");
@@ -158,11 +165,12 @@ public class AssignmentThree {
         for (int i = 0; i < v.length; i++) {
             if (v[i] == ele) {
                 System.out.println("-----FOUND----");
-                sc.nextLine();
+                System.out.println("<Enter> to continue....");
+                return;
             }
         }
         System.out.println("-----NOT FOUND----");
-        sc.nextLine();
+        System.out.println("<Enter> to continue....");
         // throw new UnsupportedOperationException("Unimplemented method 'search_ele'");
     }
 
@@ -180,10 +188,11 @@ public class AssignmentThree {
         int even = 0;
         int odd = 0;
         for (int i : v) {
-            even += ~(i % 2);
+            even += (i % 2 == 0 ? 1 : 0);
             odd += (i % 2);
         }
         System.out.println("EVEN : " + even + "\t ODD : " + odd);
+        System.out.println("<Enter> to continue....");
         sc.nextLine();
         // throw new UnsupportedOperationException("Unimplemented method
         // 'count_even_odd'");
@@ -207,6 +216,7 @@ public class AssignmentThree {
             smallest = Math.min(i, smallest);
         }
         System.out.println("Largest : " + large + "\t Smallest : " + smallest);
+        System.out.println("<Enter> to continue....");
         sc.nextLine();
     }
 }

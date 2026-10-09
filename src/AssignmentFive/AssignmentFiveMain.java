@@ -1,5 +1,7 @@
 package AssignmentFive;
 
+import java.util.Scanner;
+
 public class AssignmentFiveMain {
 
     private long global_employeeId = 1_000_000_000;
@@ -9,7 +11,8 @@ public class AssignmentFiveMain {
      * Employee
      * 1. Simple Inheritance – Employee and Manager <br>
      * Problem Statement <br>
-     * Create a Java program to demonstrate Simple Inheritance using Employee and <br>
+     * Create a Java program to demonstrate Simple Inheritance using Employee and
+     * <br>
      * Manager classes. <br>
      * Superclass – Employee <br>
      * Properties: <br>
@@ -86,10 +89,11 @@ public class AssignmentFiveMain {
      * Vehicle
      * 2. Multilevel Inheritance – Vehicle, Car and ElectricCar <br>
      * Problem Statement <br>
-     * Create a Java program to demonstrate Multilevel Inheritance using Vehicle, <br>
+     * Create a Java program to demonstrate Multilevel Inheritance using Vehicle,
+     * <br>
      * Car, and ElectricCar. <br>
      * Superclass – Vehicle <br>
-     * PROPERTIES:  <br>
+     * PROPERTIES: <br>
      * • vehicleNo <br>
      * • brand <br>
      * • price <br>
@@ -98,7 +102,8 @@ public class AssignmentFiveMain {
      * METHODS: <br>
      * • displayVehicleDetails() <br>
      * • calculateTax() <br>
-     * Create an ElectricCar object and display all vehicle, car, and electric-car <br>
+     * Create an ElectricCar object and display all vehicle, car, and electric-car
+     * <br>
      * details. <br>
      * 
      */
@@ -194,6 +199,271 @@ public class AssignmentFiveMain {
             System.out.println("Car Fuel Type : " + fuelType);
             System.out.println("Electric Car battery Capacity: " + batteryCapacity);
             System.out.println("Electric Car charging Time: " + chargingTime);
+        }
+    }
+
+    /**
+     * ________________________________________
+     * 5. Hierarchical Inheritance – Hospital Management
+     * Problem Statement
+     * Create a Java program to demonstrate Hierarchical Inheritance using Person as
+     * the superclass and Doctor and Patient as subclasses.
+     * Superclass – Person
+     * Properties:
+     * • personId
+     * • personName
+     * • age
+     * Constructor:
+     * Initialize all Person properties.
+     * Methods:
+     * • displayPersonDetails()
+     * • checkAge()
+     * Subclass – Doctor
+     * Additional Properties:
+     * • specialization
+     * • consultationFee
+     * Constructor:
+     * Initialize Person properties using super() and Doctor-specific properties.
+     * Methods:
+     * • calculateConsultationAmount()
+     * • displayDoctorDetails()
+     * Subclass – Patient
+     * Additional Properties:
+     * • disease
+     * • roomNumber
+     * Constructor:
+     * Initialize Person properties using super() and Patient-specific properties.
+     * Methods:
+     * • calculateRoomCharge()
+     * • displayPatientDetails()
+     * Create objects for both Doctor and Patient and display their complete
+     * details.
+     * Inheritance
+     * Person
+     * / \
+     * / \
+     * Doctor Patient
+     * 
+     */
+
+    /**
+     * 3. Hierarchical Inheritance – Bank Account
+     * Problem Statement
+     * Create a Java program to demonstrate Hierarchical Inheritance using
+     * BankAccount as the superclass and SavingsAccount and CurrentAccount as
+     * subclasses.
+     * Superclass – BankAccount
+     * Properties:
+     * • accountNo
+     * • accountHolderName
+     * • balance
+     * Constructor:
+     * Initialize all BankAccount properties.
+     * Methods:
+     * • deposit()
+     * • withdraw()
+     * • displayAccountDetails()
+     * Subclass – SavingsAccount
+     * Additional Property:
+     * • interestRate
+     * Constructor:
+     * Initialize BankAccount properties using super() and the interest rate.
+     * Methods:
+     * • calculateInterest()
+     * • displaySavingsDetails()
+     * Subclass – CurrentAccount
+     * Additional Property:
+     * • overdraftLimit
+     * Constructor:
+     * Initialize BankAccount properties using super() and the overdraft limit.
+     * Methods:
+     * • checkOverdraftLimit()
+     * • displayCurrentAccountDetails()
+     * Create objects for both SavingsAccount and CurrentAccount and display their
+     * respective details.
+     * Inheritance
+     * BankAccount
+     * / \
+     * / \
+     * SavingsAccount CurrentAccount
+     */
+    public class BankAccount {
+        long accountNo;
+        String accountHolderName;
+        double balance;
+
+        public BankAccount(long accountNo, String accountHolderName, double balance) {
+            this.accountNo = accountNo;
+            this.accountHolderName = accountHolderName;
+            this.balance = balance;
+        }
+
+        public void deposit(Scanner sc) {
+            double amount = sc.nextDouble();
+            this.balance += amount;
+        }
+
+        public void withdraw(Scanner sc) {
+            double amount = sc.nextDouble();
+            this.balance -= amount;
+        }
+
+        public void displayAccountDetails() {
+            System.out.println("Account Number   :" + accountNo);
+            System.out.println("Account Holder Name :" + accountHolderName);
+            System.out.println("Account Balance :" + balance);
+        }
+    }
+
+    /**
+     * SavingsAccount
+     */
+    public class SavingsAccount extends BankAccount {
+        float interestRate;
+
+        public SavingsAccount(long accountNo, String accountHolderName, double balance, float interestRate) {
+            super(accountNo, accountHolderName, balance);
+            this.interestRate = interestRate;
+        }
+
+        public void calculateInterest() {
+            System.out.println(this.interestRate * 0.01 * balance);
+        }
+
+        public void displaySavingsDetails() {
+            super.displayAccountDetails();
+            System.out.println("interestRate    :" + interestRate);
+        }
+
+    }
+
+    /**
+     * CurrentAccount
+     */
+    public class CurrentAccount extends BankAccount {
+        double overdraftLimit;
+
+        public CurrentAccount(long accountNo, String accountHolderName, double balance, double overdraftLimit) {
+            super(accountNo, accountHolderName, balance);
+            this.overdraftLimit = overdraftLimit;
+        }
+
+        public void checkOverdraftLimit() {
+            // Balance will be negative so remaining overdraft
+            System.out.println("Account balance Overdraft" + (balance + overdraftLimit));
+            System.out.println("Account Overdraft Limit" + (overdraftLimit));
+        }
+
+        public void displaySavingsDetails() {
+            super.displayAccountDetails();
+            System.out.println("interestRate    :" + overdraftLimit);
+        }
+    }
+
+    /**
+     * * 4. Hierarchical Inheritance – Product and Specialized Products
+     * Problem Statement
+     * Create a Java program to demonstrate Hierarchical Inheritance using Product
+     * as the superclass and Electronics and Clothing as subclasses.
+     * Superclass – Product
+     * Properties:
+     * • productId
+     * • productName
+     * • price
+     * Constructor:
+     * Initialize all Product properties.
+     * Methods:
+     * • calculateDiscount()
+     * • displayProductDetails()
+     * Subclass – Electronics
+     * Additional Properties:
+     * • brand
+     * • warranty
+     * Constructor:
+     * Initialize Product properties using super() and Electronics properties.
+     * Methods:
+     * • calculateFinalPrice()
+     * • displayElectronicsDetails()
+     * Subclass – Clothing
+     * Additional Properties:
+     * • size
+     * • material
+     * Constructor:
+     * Initialize Product properties using super() and Clothing properties.
+     * Methods:
+     * • calculateFinalPrice()
+     * • displayClothingDetails()
+     * Create objects for both Electronics and Clothing and display their complete
+     * details.
+     * Inheritance
+     * Product
+     * / \
+     * / \
+     * Electronics Clothing
+     */
+    /**
+     * Product
+     */
+    public class Product {
+        long productId;
+        String productName;
+        double price;
+
+        public Product(long productId, String productName, double price) {
+            this.productId = productId;
+            this.productName = productName;
+            this.price = price;
+        }
+
+        public double calculateDiscount(Scanner sc) {
+            System.out.println("Enter the discount %:");
+            float discount = sc.nextFloat();
+            return price * discount;
+        }
+
+        public void displayProductDetails() {
+            System.out.println("productId\t:" + productId);
+            System.out.println("productName\t:" + productName);
+            System.out.println("price\t:" + price);
+        }
+    }
+
+    /**
+     * Electronics
+     */
+    public class Electronics extends Product {
+
+        String brand;
+        int warranty;
+
+        public Electronics(long productId, String productName, double price, String brand, int warranty) {
+            super(productId, productName, price);
+            this.brand = brand;
+            this.warranty = warranty;
+        }
+
+        public void displayElectronicsDetails() {
+            super.displayProductDetails();
+            System.out.println("Brand   :" + brand);
+            System.out.println("Warranty   :" + warranty);
+        }
+
+        public double calculateFinalPrice(Scanner sc) {
+            return price - super.calculateDiscount(sc);
+        }
+    }
+
+    /**
+     * Clothing
+     */
+    public class Clothing extends Product {
+        int size;
+        String material;
+
+        public Clothing(long productId, String productName, double price, int size, String material) {
+            super(productId, productName, price);
+            this.size = size;
+            this.material = material;
         }
     }
 

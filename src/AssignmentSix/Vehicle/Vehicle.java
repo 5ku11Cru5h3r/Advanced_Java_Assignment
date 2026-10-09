@@ -38,7 +38,7 @@ public class Vehicle {
         this.baseRate = baseRate;
     }
 
-    public double calculateRental() {
-        return 9000;
+    public double calculateRental(double VehicleRate) {
+        return VehicleRate;
     }
 }

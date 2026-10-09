@@ -31,10 +31,9 @@ public class Car extends Vehicle {
         this.numberOfDays = numberOfDays;
         this.insuranceCharge = insuranceCharge;
     }
-
-    @Override
+    
     public double calculateRental() {
         // TODO Auto-generated method stub
-        return super.calculateRental() + numberOfDays * insuranceCharge;
+        return (super.calculateRental(900) + insuranceCharge) * numberOfDays;
     }
 }

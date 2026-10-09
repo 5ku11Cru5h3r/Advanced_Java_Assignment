@@ -7,10 +7,6 @@ public class AssignmentSixMain {
     static long consumer_number_global = 1_000_000_000;
 
     public static void main(String[] args) {
-
-        /**
-         * Part A
-         */
         ElectricityBill e = new ElectricityBill("Rajesh", 107);
         System.out.println(e.calculateBill());
         System.out.println(e.calculateBill(3));

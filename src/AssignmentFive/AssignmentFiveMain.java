@@ -1,7 +1,6 @@
 package AssignmentFive;
 
 import java.util.Scanner;
-
 public class AssignmentFiveMain {
 
     private long global_employeeId = 1_000_000_000;
@@ -201,50 +200,6 @@ public class AssignmentFiveMain {
             System.out.println("Electric Car charging Time: " + chargingTime);
         }
     }
-
-    /**
-     * ________________________________________
-     * 5. Hierarchical Inheritance – Hospital Management
-     * Problem Statement
-     * Create a Java program to demonstrate Hierarchical Inheritance using Person as
-     * the superclass and Doctor and Patient as subclasses.
-     * Superclass – Person
-     * Properties:
-     * • personId
-     * • personName
-     * • age
-     * Constructor:
-     * Initialize all Person properties.
-     * Methods:
-     * • displayPersonDetails()
-     * • checkAge()
-     * Subclass – Doctor
-     * Additional Properties:
-     * • specialization
-     * • consultationFee
-     * Constructor:
-     * Initialize Person properties using super() and Doctor-specific properties.
-     * Methods:
-     * • calculateConsultationAmount()
-     * • displayDoctorDetails()
-     * Subclass – Patient
-     * Additional Properties:
-     * • disease
-     * • roomNumber
-     * Constructor:
-     * Initialize Person properties using super() and Patient-specific properties.
-     * Methods:
-     * • calculateRoomCharge()
-     * • displayPatientDetails()
-     * Create objects for both Doctor and Patient and display their complete
-     * details.
-     * Inheritance
-     * Person
-     * / \
-     * / \
-     * Doctor Patient
-     * 
-     */
 
     /**
      * 3. Hierarchical Inheritance – Bank Account
@@ -464,6 +419,132 @@ public class AssignmentFiveMain {
             super(productId, productName, price);
             this.size = size;
             this.material = material;
+        }
+
+        public double calculateFinalPrice(Scanner sc) {
+            return price - super.calculateDiscount(sc);
+        }
+
+        public void displayClothingDetails() {
+            super.displayProductDetails();
+            System.out.println("Size   :" + size);
+            System.out.println("Material   :" + material);
+        }
+    }
+
+    /**
+     * ________________________________________
+     * 5. Hierarchical Inheritance – Hospital Management
+     * Problem Statement
+     * Create a Java program to demonstrate Hierarchical Inheritance using Person as
+     * the superclass and Doctor and Patient as subclasses.
+     * Superclass – Person
+     * Properties:
+     * • personId
+     * • personName
+     * • age
+     * Constructor:
+     * Initialize all Person properties.
+     * Methods:
+     * • displayPersonDetails()
+     * • checkAge()
+     * Subclass – Doctor
+     * Additional Properties:
+     * • specialization
+     * • consultationFee
+     * Constructor:
+     * Initialize Person properties using super() and Doctor-specific properties.
+     * Methods:
+     * • calculateConsultationAmount()
+     * • displayDoctorDetails()
+     * Subclass – Patient
+     * Additional Properties:
+     * • disease
+     * • roomNumber
+     * Constructor:
+     * Initialize Person properties using super() and Patient-specific properties.
+     * Methods:
+     * • calculateRoomCharge()
+     * • displayPatientDetails()
+     * Create objects for both Doctor and Patient and display their complete
+     * details.
+     * Inheritance
+     * Person
+     * / \
+     * / \
+     * Doctor Patient
+     * 
+     */
+
+    /**
+     * Person
+     */
+    public class Person {
+        long personId;
+        String personName;
+        int age;
+
+        public Person(long personId, String personName, int age) {
+            this.personId = personId;
+            this.personName = personName;
+            this.age = age;
+        }
+
+        public void displayPersonDetails() {
+            System.out.println("PersonId   :" + personId);
+            System.out.println("PersonName   :" + personName);
+            System.out.println("Age   :" + age);
+        }
+
+        public String checkAge() {
+            if (age > 17)
+                return "Adult";
+            return "Child";
+        }
+    }
+
+    /**
+     * Doctor
+     */
+    public class Doctor extends Person {
+        String specialization;
+        double consultationFee;
+
+        public Doctor(long personId, String personName, int age, String specialization, double consultationFee) {
+            super(personId, personName, age);
+            this.specialization = specialization;
+            this.consultationFee = consultationFee;
+        }
+
+        public double calculateConsultationAmount() {
+            return consultationFee - 0.10 * consultationFee;
+        }
+
+        public void displayDoctorDetails() {
+            super.displayPersonDetails();
+            System.out.println("Specialization   :" + specialization);
+            System.out.println("Consultation Fee   :" + consultationFee);
+        }
+    }
+
+    public class Patient extends Person {
+        String disease;
+        double roomNumber;
+
+        public Patient(long personId, String personName, int age, String specialization, double roomNumber) {
+            super(personId, personName, age);
+            this.disease = specialization;
+            this.roomNumber = roomNumber;
+        }
+
+        public double calculateRoomCharge(int timeInDays) {
+            return 400 * timeInDays ;
+        }
+
+        public void displayPatientDetails() {
+            super.displayPersonDetails();
+            System.out.println("Disease   :" + disease);
+            System.out.println("Room Number   :" + roomNumber);
         }
     }
 
